@@ -8,9 +8,9 @@ namespace Proj
 {
     internal interface IArmor
     {
-        string Name
-        {
-            get; 
-        }
+        string Name { get; }
+        string Description { get; }
+        int Armor { get; }
+        int Toughness { get; }
     }
 }

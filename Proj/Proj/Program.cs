@@ -13,7 +13,6 @@ namespace Proj
         static void Main(string[] args)
         {
             
-            string filePath = "Tárgyak.csv";
 
             // Read the file
             string[] names = new string[12];
@@ -21,7 +20,7 @@ namespace Proj
             int[] armorValues = new int[12];
             int[] toughnessValues = new int[12];
 
-            using (StreamReader reader = new StreamReader("Tárgyak.csv"))
+            using (StreamReader reader = new StreamReader("ITárgyak.csv"))
             {
                 // Skip the header lines
                 reader.ReadLine();
@@ -47,28 +46,19 @@ namespace Proj
                     {
                         descriptions[i] = parts[1];
                     }
-                    else
-                    {
-                        descriptions[i] = "Unknown description";
-                    }
+                    
 
                     if (parts.Length >= 3 && int.TryParse(parts[2], out int armorValue))
                     {
                         armorValues[i] = armorValue;
                     }
-                    else
-                    {
-                        armorValues[i] = 0;
-                    }
+                  
 
                     if (parts.Length >= 4 && int.TryParse(parts[3], out int toughnessValue))
                     {
                         toughnessValues[i] = toughnessValue;
                     }
-                    else
-                    {
-                        toughnessValues[i] = 0;
-                    }
+                    
 
                     i++;
                 }

@@ -9,9 +9,11 @@ namespace Proj
     internal interface ILények
     {
         string Name { get; }
-        int Health { get; set; }
-        int Attack { get; set; }
-        int Defense { get; set; }
+        int Health { get; }
+        int Attack { get; }
+        int Defense { get; }
+        int Xp { get; }
+
         void AttackPlayer(IJátékos player);
     }
 }
