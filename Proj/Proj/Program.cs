@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -14,25 +14,25 @@ namespace Proj
         {
             
 
-            // Read the file
+            
             string[] names = new string[12];
             string[] descriptions = new string[12];
             int[] armorValues = new int[12];
             int[] toughnessValues = new int[12];
 
-            using (StreamReader reader = new StreamReader("ITárgyak.csv"))
+            using (StreamReader reader = new StreamReader("IObjects.csv"))
             {
-                // Skip the header lines
+                
                 reader.ReadLine();
                 reader.ReadLine();
 
-                // Read the remaining lines (names)
+                
                 int i = 0;
                 while (i < 12)
                 {
                     string line = reader.ReadLine();
 
-                    // Check if line is null
+                    
                     if (line == null)
                     {
                         break;
@@ -64,7 +64,7 @@ namespace Proj
                 }
             }
 
-            // Print the data
+            
             for (int i = 0; i < 12; i++)
             {
                 Console.WriteLine(names[i] + ": " + descriptions[i] + " (" + armorValues[i] + ", " + toughnessValues[i] + ")");
